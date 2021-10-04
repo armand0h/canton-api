@@ -32,8 +32,27 @@ const usuariosGetOne = (req, res = response) => {
     });
 }
 
+// Obtener todos los usuarios por equipo  /users/team/{id}
+const usuariosTeamGetAll = (req, res = response) => {
+    const { id } = req.params;
+
+    User.getByTeam( id, (err, data) => {
+        if (err) {
+            if (err.kind === "not_found") {
+              res.status(404).send({
+                message: `Usuarios de equipo no encontrados id ${ id }.`
+              });
+            } else {
+              res.status(500).send({
+                message: `Error de servidor usuarios de equipo id ${ id }`
+              });
+            }
+          } else res.json(data);
+    });
+}
 
 module.exports = { 
     usuariosGetAll,
-    usuariosGetOne
+    usuariosGetOne,
+    usuariosTeamGetAll
 }

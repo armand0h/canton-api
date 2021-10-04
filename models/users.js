@@ -31,8 +31,26 @@ const getOne = (id, result) => {
     });
 }
 
+// obtener usuarios por equipo
+const getByTeam = (id, result) => {
+    db.query(`SELECT * FROM users WHERE teamId = ${ id }`, (err, res) => {
+        if (err) {
+            console.log("error users getByTeam ", err);
+            result(null, err);
+            return;
+        }
+        if (res.length) {
+            console.log("coincidencia: ", res);
+            result(null, res);
+            return;
+          }
+      
+          result({ kind: "not_found" }, null);
+    });
+}
 
 module.exports = { 
     getAll,
     getOne,
+    getByTeam
 }

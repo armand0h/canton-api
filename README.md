@@ -20,10 +20,22 @@ cd canton-api
 npm install
 node app
 
-# Rutas
-get http://localhost:8080/clients
-get http://localhost:8080/clients/1
-get http://localhost:8080/users
+# Endpoints
+
+## Obtener clientes
+    get http://localhost:8080/clients
+## Obtener cliente por id
+    get http://localhost:8080/clients/1
+## Obtener usuarios
+    get http://localhost:8080/users
+## Obtener usuario por id
 get http://localhost:8080/users/1
-get http://localhost:8080/sales/team/1
-get http://localhost:8080/sales/users/1
+## Obtener ventas por equipo
+    get http://localhost:8080/sales/team/1
+## Obtener ventas por usuario
+    get http://localhost:8080/sales/users/1
+
+## Obtener equipos
+    get http://localhost:8080/teams
+## Obtener usuarios por equipo
+get http://localhost:8080/users/team/1
