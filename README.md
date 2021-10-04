@@ -3,22 +3,22 @@
 git clone git@github.com:armand0h/canton-api.git
 
 # Requisitos:
-Node
-Mysql
+    Node
+    Mysql
 
 # Configuración: canton-api/.env
 
-PORT=8080
-DB_HOST=localhost
-DB_USER={user}
-DB_PASS={password}
-DB_NAME={nombre_db}
+    PORT=8080
+    DB_HOST=localhost
+    DB_USER={user}
+    DB_PASS={password}
+    DB_NAME={nombre_db}
 
 # Instalación y servidor
 
-cd canton-api
-npm install
-node app
+    cd canton-api
+    npm install
+    node app
 
 # Endpoints
 
