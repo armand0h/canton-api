@@ -40,7 +40,28 @@ const ventasUsuario = (req, res = response) => {
     });
 }
 
+// Obtener detalle de ventas /team/:teamId/user/:userId
+const ventasDetalle = (req, res = response) => {
+  const { teamId, userId } = req.params;
+
+  Sales.getDetail( teamId, userId, (err, data) => {
+      if (err) {
+          if (err.kind === "not_found") {
+            res.status(404).send({
+              message: `Detalle de Ventas no encontradas equipo id ${ teamId } user id ${ userId }.`
+            });
+          } else {
+            res.status(500).send({
+              message: `Error de servidor detalle ventas equipo id ${ teamId } user id ${ userId }.`
+            });
+          }
+        } else res.json(data);
+  });
+}
+
+
 module.exports = { 
     ventasEquipo,
-    ventasUsuario
+    ventasUsuario,
+    ventasDetalle
 }

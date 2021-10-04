@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { ventasEquipo, ventasUsuario } = require('../controllers/ventas');
+const { ventasEquipo, ventasUsuario, ventasDetalle } = require('../controllers/ventas');
 
 const router = Router();
 
@@ -8,5 +8,8 @@ router.get('/team/:id', ventasEquipo );
 
 // Obtener un usuario por id
 router.get('/users/:id', ventasUsuario );
+
+// detalle de ventas por equipo
+router.get('/team/:teamId/user/:userId', ventasDetalle );
 
 module.exports = router;

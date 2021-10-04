@@ -38,4 +38,12 @@ get http://localhost:8080/users/1
 ## Obtener equipos
     get http://localhost:8080/teams
 ## Obtener usuarios por equipo
-get http://localhost:8080/users/team/1
+    get http://localhost:8080/users/team/1
+
+## Obtener detalles de ventas
+    get http://localhost:8080/sales/team/1/user/1
+    Nota:
+        team/0/user/0   todas las ventas
+        team/1/user/0   ventas equipo 1
+        team/0/user/1   ventas usuario 1
+        team/1/user/2   ventas usuario 2 del equipo 1
