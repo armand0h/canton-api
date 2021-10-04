@@ -11,6 +11,7 @@ class Server {
         this.usuariosPath = '/users';
         this.clientesPath = '/clients';
         this.ventasPath   = '/sales';
+        this.equiposPath  = '/teams';
 
         this.middlewares();
 
@@ -34,6 +35,8 @@ class Server {
         this.app.use(this.clientesPath, require('../routes/clientes'));
         // peticiones condicionales a ventas
         this.app.use(this.ventasPath, require('../routes/ventas'));
+        // peticiones condicionales a equipos
+        this.app.use(this.equiposPath, require('../routes/equipos'));
     }
 
     listen() {
