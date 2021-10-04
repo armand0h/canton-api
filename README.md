@@ -6,7 +6,8 @@ git clone git@github.com:armand0h/canton-api.git
     Node
     Mysql
 
-# Configuración: canton-api/.env
+# Configuración: 
+    modificar el archivo: canton-api/.env
 
     PORT=8080
     DB_HOST=localhost
